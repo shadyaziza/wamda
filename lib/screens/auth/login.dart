@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wamda/common/circular_button.dart';
 import 'package:wamda/constants/theme.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -118,25 +119,9 @@ class LoginScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    ClipOval(
-                      child: Material(
-                        color: Theme.of(context).primaryColor,
-                        textStyle: Theme.of(context).textTheme.body1.copyWith(
-                            color: Theme.of(context)
-                                .backgroundColor), // button color
-                        child: InkWell(
-                          splashColor:
-                              Theme.of(context).accentColor, // inkwell color
-                          child: SizedBox(
-                              width: 56,
-                              height: 56,
-                              child: Icon(
-                                Icons.chevron_right,
-                                color: Theme.of(context).backgroundColor,
-                              )),
-                          onTap: () {},
-                        ),
-                      ),
+                    CircularButton(
+                      iconData: Icons.chevron_right,
+                      onTap: () {},
                     )
                     // MaterialButton(
                     //   onPressed: () {},
