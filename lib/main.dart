@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'screens/auth/login.dart';
+
 void main() => runApp(Wamda());
 
 class Wamda extends StatelessWidget {
@@ -9,11 +11,12 @@ class Wamda extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        fontFamily: 'Poppins',
-        backgroundColor: Color(0xff1c313a),
-        primaryColor: Color(0xffff1744),
-        accentColor: Color(0xff78002e),
-      ),
+          brightness: Brightness.dark,
+          fontFamily: 'Poppins',
+          backgroundColor: Color(0xff151824),
+          primaryColor: Color(0xfffff350),
+          accentColor: Color(0xfff57c00),
+          cardColor: Color(0xff3F455A)),
       home: RedirectionWidget(),
     );
   }
