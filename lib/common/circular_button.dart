@@ -9,11 +9,11 @@ class CircularButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ClipOval(
       child: Material(
-        color: Theme.of(context).primaryColor,
+        color: Theme.of(context).accentColor,
         textStyle: Theme.of(context)
             .textTheme
             .body1
-            .copyWith(color: Theme.of(context).backgroundColor), // button color
+            .copyWith(color: Theme.of(context).accentColor), // button color
         child: InkWell(
           splashColor: Theme.of(context).accentColor, // inkwell color
           child: SizedBox(
@@ -21,7 +21,7 @@ class CircularButton extends StatelessWidget {
               height: 56,
               child: Icon(
                 iconData,
-                color: Theme.of(context).backgroundColor,
+                color: Theme.of(context).canvasColor,
               )),
           onTap: onTap,
         ),
