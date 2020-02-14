@@ -76,7 +76,7 @@ class _HomeViewState extends State<HomeView> {
       _index = newIndex;
     });
     _pageCont.animateToPage(_index,
-        duration: Duration(microseconds: 300), curve: Curves.easeIn);
+        duration: Duration(milliseconds: 300), curve: Curves.easeIn);
   }
 }
 
