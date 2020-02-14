@@ -24,7 +24,11 @@ class _HomeViewState extends State<HomeView> {
     _TabData(
       label: 'Power',
       iconData: Icons.power,
-    )
+    ),
+    _TabData(
+      label: 'More',
+      iconData: Icons.menu,
+    ),
   ];
   @override
   void initState() {
@@ -51,9 +55,13 @@ class _HomeViewState extends State<HomeView> {
           Container(
             color: Colors.red,
           ),
+          Container(
+            color: Colors.blueGrey,
+          )
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         currentIndex: _index,
         onTap: _onTap,
         items: _tabs
