@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wamda/screens/home/rooms.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key key}) : super(key: key);
@@ -10,16 +11,16 @@ class HomeView extends StatefulWidget {
 class _HomeViewState extends State<HomeView> {
   PageController _pageCont;
   int _index = 0;
-  List<TabData> _tabs = [
-    TabData(
+  List<_TabData> _tabs = [
+    _TabData(
       label: 'Rooms',
       iconData: Icons.room,
     ),
-    TabData(
+    _TabData(
       label: 'Schedule',
       iconData: Icons.schedule,
     ),
-    TabData(
+    _TabData(
       label: 'Power',
       iconData: Icons.power,
     )
@@ -44,9 +45,7 @@ class _HomeViewState extends State<HomeView> {
         controller: _pageCont,
         onPageChanged: _onPageChanged,
         children: <Widget>[
-          Container(
-            color: Colors.orange,
-          ),
+          RoomsScreen(),
           Container(
             color: Colors.green,
           ),
@@ -59,7 +58,7 @@ class _HomeViewState extends State<HomeView> {
         currentIndex: _index,
         onTap: _onTap,
         items: _tabs
-            .map((TabData data) => BottomNavigationBarItem(
+            .map((_TabData data) => BottomNavigationBarItem(
                 icon: Icon(data.iconData), title: Text(data.label)))
             .toList(),
       ),
@@ -81,9 +80,9 @@ class _HomeViewState extends State<HomeView> {
   }
 }
 
-class TabData {
+class _TabData {
   final String label;
   final IconData iconData;
 
-  TabData({@required this.label, @required this.iconData});
+  _TabData({@required this.label, @required this.iconData});
 }

@@ -19,6 +19,7 @@ class Wamda extends StatelessWidget {
           primaryColor: Color(0xff151824),
           // primaryColor: Color(0xfffff350),
           accentColor: Color(0xfffff350),
+          // canvasColor: Color(0xffff8a65),
           // accentColor: Color(0xfff57c00),
           cardColor: Color(0xff3F455A)),
       home: RedirectionWidget(),
