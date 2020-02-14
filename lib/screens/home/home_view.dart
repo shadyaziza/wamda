@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wamda/screens/home/more.dart';
 import 'package:wamda/screens/home/rooms.dart';
 import 'package:wamda/screens/home/schdeules.dart';
 
@@ -55,9 +56,7 @@ class _HomeViewState extends State<HomeView> {
           Container(
             color: Colors.red,
           ),
-          Container(
-            color: Colors.blueGrey,
-          )
+          MoreScreen()
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

@@ -38,6 +38,7 @@ flutter:
     - assets/imgs/living.jpeg
     - assets/imgs/kitchen.jpeg
     - assets/imgs/bedroom.jpeg
+    - assets/imgs/avataaars.png
   fonts:
     - family: Poppins
       fonts:
