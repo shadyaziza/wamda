@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wamda/common/circular_button.dart';
+import 'package:wamda/constants/router.dart';
 import 'package:wamda/constants/theme.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -11,7 +12,6 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
         resizeToAvoidBottomInset: true,
         resizeToAvoidBottomPadding: true,
-        backgroundColor: Theme.of(context).backgroundColor,
         body: SafeArea(
           child: Padding(
             padding: EdgeInsets.all(12.0),
@@ -121,7 +121,8 @@ class LoginScreen extends StatelessWidget {
                     ),
                     CircularButton(
                       iconData: Icons.chevron_right,
-                      onTap: () {},
+                      onTap: () =>
+                          Navigator.of(context).pushNamed(RoutePaths.Home),
                     )
                     // MaterialButton(
                     //   onPressed: () {},
