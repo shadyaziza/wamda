@@ -41,7 +41,7 @@ class LoginScreen extends StatelessWidget {
                   child: Icon(
                     Icons.lightbulb_outline,
                     size: 100.0,
-                    color: Theme.of(context).primaryColor,
+                    color: Theme.of(context).accentColor,
                   ),
                 ),
                 // AspectRatio(
@@ -57,7 +57,7 @@ class LoginScreen extends StatelessWidget {
                     style: Theme.of(context)
                         .textTheme
                         .display3
-                        .copyWith(color: Theme.of(context).primaryColor),
+                        .copyWith(color: Theme.of(context).accentColor),
                   ),
                 ),
                 SizedBox(
