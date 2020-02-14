@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wamda/screens/home/rooms.dart';
+import 'package:wamda/screens/home/schdeules.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key key}) : super(key: key);
@@ -46,9 +47,7 @@ class _HomeViewState extends State<HomeView> {
         onPageChanged: _onPageChanged,
         children: <Widget>[
           RoomsScreen(),
-          Container(
-            color: Colors.green,
-          ),
+          SchedulesScreen(),
           Container(
             color: Colors.red,
           ),
