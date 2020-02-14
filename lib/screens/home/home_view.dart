@@ -40,14 +40,44 @@ class _HomeViewState extends State<HomeView> {
         leading: Container(),
         backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       ),
-      body: PageView(),
+      body: PageView(
+        controller: _pageCont,
+        onPageChanged: _onPageChanged,
+        children: <Widget>[
+          Container(
+            color: Colors.orange,
+          ),
+          Container(
+            color: Colors.green,
+          ),
+          Container(
+            color: Colors.red,
+          ),
+        ],
+      ),
       bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _index,
+        onTap: _onTap,
         items: _tabs
             .map((TabData data) => BottomNavigationBarItem(
                 icon: Icon(data.iconData), title: Text(data.label)))
             .toList(),
       ),
     );
+  }
+
+  void _onPageChanged(int newPage) {
+    setState(() {
+      _index = newPage;
+    });
+  }
+
+  void _onTap(int newIndex) {
+    setState(() {
+      _index = newIndex;
+    });
+    _pageCont.animateToPage(_index,
+        duration: Duration(microseconds: 300), curve: Curves.easeIn);
   }
 }
 
