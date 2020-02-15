@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:wamda/common/image_card.dart';
 import 'package:wamda/constants/theme.dart';
 import 'package:wamda/models/room.dart';
 
@@ -138,19 +139,8 @@ class RoomsList extends StatelessWidget {
     return ListView.builder(
       itemCount: _rooms.length,
       itemBuilder: (BuildContext context, int index) {
-        return Container(
-          margin: EdgeInsets.all(12.0),
-          padding: EdgeInsets.all(16.0),
-          height: MediaQuery.of(context).size.height / 4.2,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(8.0),
-            image: DecorationImage(
-              image: AssetImage(_rooms[index].photoUrl),
-              fit: BoxFit.fill,
-              colorFilter: ColorFilter.mode(
-                  Colors.grey.withOpacity(0.6), BlendMode.srcOver),
-            ),
-          ),
+        return ImageCard(
+          photoUrl: _rooms[index].photoUrl,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,

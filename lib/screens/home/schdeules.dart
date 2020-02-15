@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wamda/common/image_card.dart';
 import 'package:wamda/models/schedules.dart';
 
 class SchedulesScreen extends StatelessWidget {
@@ -44,19 +45,8 @@ class SchedulesScreen extends StatelessWidget {
       child: ListView.builder(
         itemCount: _shcedules.length,
         itemBuilder: (_, int index) {
-          return Container(
-            margin: EdgeInsets.all(12.0),
-            padding: EdgeInsets.all(16.0),
-            height: MediaQuery.of(context).size.height / 4.2,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8.0),
-              image: DecorationImage(
-                image: AssetImage(_shcedules[index].photoUrl),
-                fit: BoxFit.fill,
-                colorFilter: ColorFilter.mode(
-                    Colors.grey.withOpacity(0.6), BlendMode.srcOver),
-              ),
-            ),
+          return ImageCard(
+            photoUrl: _shcedules[index].photoUrl,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
