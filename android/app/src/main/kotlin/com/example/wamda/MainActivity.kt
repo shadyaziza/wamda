@@ -1,4 +1,4 @@
-package com.example.wamda
+package app.test.wamda
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
