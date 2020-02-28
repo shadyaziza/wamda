@@ -110,12 +110,16 @@ class LoginScreen extends StatelessWidget {
                                 .color
                                 .withOpacity(subtitleOpacity)),
                       ),
-                      Text(
-                        'REGISTER NOW',
-                        style: Theme.of(context).textTheme.subtitle.copyWith(
-                            fontSize:
-                                Theme.of(context).textTheme.subhead.fontSize *
-                                    1),
+                      InkWell(
+                        onTap: () =>
+                            Navigator.of(context).pushNamed(RoutePaths.Signup),
+                        child: Text(
+                          'REGISTER NOW',
+                          style: Theme.of(context).textTheme.subtitle.copyWith(
+                              fontSize:
+                                  Theme.of(context).textTheme.subhead.fontSize *
+                                      1),
+                        ),
                       ),
                     ],
                   ),
