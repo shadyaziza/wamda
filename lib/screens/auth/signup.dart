@@ -1,6 +1,8 @@
+import 'package:adhara_socket_io/adhara_socket_io.dart';
 import 'package:flutter/material.dart';
 import 'package:wamda/common/circular_button.dart';
 import 'package:wamda/constants/theme.dart';
+import 'package:socket_io_client/socket_io_client.dart' as IO;
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({Key key}) : super(key: key);
@@ -10,7 +12,30 @@ class SignupScreen extends StatelessWidget {
     return Scaffold(
         floatingActionButton: CircularButton(
           iconData: Icons.chevron_right,
-          onTap: () {},
+          onTap: () async {
+            SocketIOManager manager = SocketIOManager();
+            SocketIO socket = await manager.createInstance(
+              SocketOptions("http://139.59.210.114:8000/",
+                  query: {
+                    "auth": "--SOME AUTH STRING---",
+                    "info": "new connection from adhara-socketio",
+                    "timestamp": DateTime.now().toString()
+                  },
+                  enableLogging: false,
+                  transports: [Transports.WEB_SOCKET]),
+            );
+            socket.connect();
+            socket.onConnect((data) {
+              print("connected...");
+              print(data);
+              socket.emit("message", ["Hello world!"]);
+              socket.emit("get_current_date", []);
+            });
+            socket.on("event", (data) {
+              print("event");
+              print(data);
+            });
+          },
         ),
         body: SafeArea(
           child: Padding(
